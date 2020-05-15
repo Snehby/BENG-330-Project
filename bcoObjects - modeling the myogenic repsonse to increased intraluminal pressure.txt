@@ -1,0 +1,265 @@
+[
+    {
+        "id": "5ebdef238b7ec581678bcdd1",
+        "provenance_domain": {
+            "embargo": {},
+            "name": "Modeling the Myogenic Response to Increased Intraluminal Pressure",
+            "review": [],
+            "license": "https://spdx.org/licenses/CC-BY-4.0.html",
+            "version": "1.0",
+            "contributors": [
+                {
+                    "name": "Sneh Talwar",
+                    "affiliation": "George Mason Universtiy",
+                    "email": "stalwar2@gmu.edu",
+                    "contribution": [
+                        "authoredBy",
+                        "createdBy"
+                    ],
+                    "orcid": "https://orcid.org/0000-0002-0182-2765"
+                },
+                {
+                    "affiliation": "Creator",
+                    "contribution": [
+                        "createdBy"
+                    ],
+                    "email": "stalwar@gwu.edu",
+                    "name": "Sneh Talwar",
+                    "orcid": ""
+                }
+            ],
+            "created": "2020-05-15T01:23:47.500Z",
+            "modified": "2020-05-15T01:23:47.500Z"
+        },
+        "description_domain": {
+            "keywords": [
+                "Myogenic, vascular smooth muscle tone, computational model, vessel walls, vessel mechanics"
+            ],
+            "xref": [
+                {
+                    "namespace": "Wiley Online Library",
+                    "name": "A Theoretical Model for the Myogenic Response Based on the Length–Tension Characteristics of Vascular Smooth Muscle",
+                    "ids": [
+                        "https://onlinelibrary.wiley.com/doi/full/10.1080/10739680590934745"
+                    ],
+                    "access_time": "2020-03-15T14:30:00.000Z"
+                },
+                {
+                    "namespace": "Physiome.org",
+                    "name": "Vessel_Mechanics",
+                    "access_time": "2020-02-20T15:30:00.000Z",
+                    "ids": [
+                        "0113"
+                    ]
+                }
+            ],
+            "platform": [
+                "MATLAB"
+            ],
+            "pipeline_steps": [
+                {
+                    "step_number": 1,
+                    "name": "MATLAB",
+                    "description": "Plot the graphs of the original data (rat mesenteric arterioles) ",
+                    "version": "9.6",
+                    "prerequisite": [
+                        {
+                            "uri": {
+                                "filename": "Data from row 1 of table 1",
+                                "uri": "https://onlinelibrary-wiley-com.mutex.gmu.edu/doi/full/10.1080/10739680590934745"
+                            },
+                            "name": "A Theoretical Model for the Myogenic Response Based on the Length–Tension Characteristics of Vascular Smooth Muscle"
+                        }
+                    ],
+                    "input_list": [
+                        {
+                            "filename": "all.csv",
+                            "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/all.csv"
+                        }
+                    ],
+                    "output_list": [
+                        {
+                            "filename": "tress-strain.png",
+                            "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/figures/stress-strain.png"
+                        },
+                        {
+                            "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/figures/pressure-wallthickness.png",
+                            "filename": "pressure-wallthickness.png"
+                        },
+                        {
+                            "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/figures/pressure-stress.png",
+                            "filename": "pressure-stress.png"
+                        },
+                        {
+                            "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/figures/pressure-diameter.png",
+                            "filename": "pressure-diameter.png"
+                        }
+                    ]
+                },
+                {
+                    "step_number": 2,
+                    "name": "Simulink",
+                    "description": "Model the transfer function in Simulink with rat femoral artery data",
+                    "version": "9.6",
+                    "prerequisite": [
+                        {
+                            "uri": {
+                                "uri": "https://onlinelibrary-wiley-com.mutex.gmu.edu/doi/full/10.1080/10739680590934745",
+                                "filename": "Data from table 1 row 3"
+                            },
+                            "name": "A Theoretical Model for the Myogenic Response Based on the Length–Tension Characteristics of Vascular Smooth Muscle"
+                        }
+                    ],
+                    "input_list": [
+                        {
+                            "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/femoral_data.m",
+                            "filename": "femoral_data.m"
+                        }
+                    ],
+                    "output_list": [
+                        {
+                            "filename": "BENG330_Sneh_Talwar_sim.slx",
+                            "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/BENG330_Sneh_Talwar_sim.slx"
+                        }
+                    ]
+                }
+            ]
+        },
+        "execution_domain": {
+            "environment_variables": [],
+            "script": [
+                {
+                    "uri": {
+                        "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/BENG330_Project_Sneh_Talwar.m",
+                        "filename": "BENG330_Project_Sneh_Talwar.m"
+                    }
+                }
+            ],
+            "script_driver": "MATLAB/Simulink",
+            "software_prerequisites": [
+                {
+                    "uri": {
+                        "uri": "https://www.mathworks.com/products/matlab.html?s_tid=hp_products_matlab",
+                        "filename": "MATLAB downloads page"
+                    },
+                    "name": "MATLAB",
+                    "version": "9.6"
+                },
+                {
+                    "uri": {
+                        "uri": "https://www.mathworks.com/products/matlab.html?s_tid=hp_products_matlab",
+                        "filename": "MATLAB/Simulink downloads page"
+                    },
+                    "name": "Simulink",
+                    "version": "9.6"
+                }
+            ],
+            "external_data_endpoints": [
+                {
+                    "name": "Data from paper",
+                    "url": "https://onlinelibrary-wiley-com.mutex.gmu.edu/doi/full/10.1080/10739680590934745"
+                },
+                {
+                    "name": "JSIM Model from Vessel_Mechanics ",
+                    "url": "https://www.physiome.org/jsim/models/webmodel/NSR/Vessel_Mechanics/"
+                }
+            ]
+        },
+        "io_domain": {
+            "input_subdomain": [
+                {
+                    "uri": {
+                        "filename": "Diameter-Pressure.m",
+                        "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/Diameter-Pressure.m"
+                    }
+                },
+                {
+                    "uri": {
+                        "filename": "Strain-Pressure.m",
+                        "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/Strain-Pressure.m"
+                    }
+                },
+                {
+                    "uri": {
+                        "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/TotalStress-Pressure.m",
+                        "filename": "TotalStress-Pressure.m"
+                    }
+                },
+                {
+                    "uri": {
+                        "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/WallThickness-Pressure.m",
+                        "filename": "WallThickness-Pressure.m"
+                    }
+                },
+                {
+                    "uri": {
+                        "filename": "all.csv",
+                        "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/all.csv"
+                    }
+                },
+                {
+                    "uri": {
+                        "filename": "diameter-time.m",
+                        "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/diameter-time.m"
+                    }
+                },
+                {
+                    "uri": {
+                        "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/femoral_data.m",
+                        "filename": "femoral_data.m"
+                    }
+                },
+                {
+                    "uri": {
+                        "filename": "pressure-time.m",
+                        "uri": "https://github.com/Snehby/BENG-330-Project/blob/master/pressure-time.m"
+                    }
+                }
+            ],
+            "output_subdomain": [
+                {
+                    "uri": {
+                        "filename": "figures/",
+                        "uri": "https://github.com/Snehby/BENG-330-Project/tree/master/figures"
+                    },
+                    "mediatype": "png"
+                }
+            ]
+        },
+        "error_domain": {
+            "empirical_error": {},
+            "algorithmic_error": {}
+        },
+        "etag": "e5a47bd644e343b718ed53f3390b198b1a440c0d7c8f3f0fd7c72efb61846db1",
+        "extension_domain": [],
+        "usability_domain": [
+            "R. Loutzenhiser, A. Bidani and L. Chilton, \"Renal Myogenic Response\", Circulation Research, vol. 90, no. 12, pp. 1316-1324, 2002. Available: 10.1161/01.res.0000024262.11534.18.",
+            "K. Yip et al., \"Intraluminal pressure triggers myogenic response via activation of calcium spark and calcium-activated chloride channel in rat renal afferent arteriole\", American Journal of Physiology-Renal Physiology, vol. 315, no. 6, pp. F1592-F1600, 2018. Available: https://www.ncbi.nlm.nih.gov/pubmed/30089032.",
+            "K. Aukland, “Myogenic Mechanisms in the Kidney,” Journal of Hypertension. Supplement: Official Journal of the International Society of Hypertension vol. 7,4 (1989): S71-6; discussion S77.",
+            "Johansson B., “Myogenic tone and reactivity: definitions based on muscle physiology,” Journal of Hypertenion. Supplement. 1989; vol. 7 no. 4: S5–S8; discussion S9.",
+            "G. Osol, J. Brekke, K. McElroy-Yaggy and N. Gokina, \"Myogenic tone, reactivity, and forced dilatation: a three-phase model of in vitro arterial myogenic behavior\", American Journal of Physiology-Heart and Circulatory Physiology, vol. 283, no. 6, pp. H2260-H2267, 2002. Available: 10.1152/ajpheart.00634.2002",
+            "Parasympathetic vs Sympathetic Nervous System - Difference and Comparison | Diffen\", Diffen.com. [Online]. Available: https://www.diffen.com/difference/Parasympathetic_nervous_system_vs_Sympathetic_nervous_system.",
+            "M. B. W, “On the local reactions of the arterial wall to changes of internal pressure,” The Journal of Physiology, vol. 28, no. 3, pp. 220–231, 1902, doi: 10.1113/jphysiol.1902.sp000911.",
+            "T. Takenaka, H. Forster, A. De Micheli and M. Epstein, \"Impaired myogenic responsiveness of renal microvessels in Dahl salt-sensitive rats.\", Circulation Research, vol. 71, no. 2, pp. 471-480, 1992. Available: https://www.ahajournals.org/doi/pdf/10.1161/01.RES.71.2.471.",
+            "B. Spronck, E. Martens, E. Gommer and F. van de Vosse, \"A lumped parameter model of cerebral blood flow control combining cerebral autoregulation and neurovascular coupling\", American Journal of Physiology-Heart and Circulatory Physiology, vol. 303, no. 9, pp. H1143-H1153, 2012. Available: https://doi.org/10.1152/ajpheart.00303.2012.",
+            "A. Øien and K. Aukland, \"A multinephron model of renal blood flow autoregulation by tubuloglomerular feedback and myogenic response\", Acta Physiologica Scandinavica, vol. 143, no. 1, pp. 71-92, 1991. Available: 10.1111/j.1748-1716.1991.tb09203.x.",
+            "S. Lee and G. Schmid-Scho¨nbein, \"Biomechanical Model for the Myogenic Response in the Microcirculation: Part I—Formulation and Initial Testing\", Journal of Biomechanical Engineering, vol. 118, no. 2, pp. 145-151, 1996. Available: https://doi.org/10.1115/1.2795952.",
+            "T. Voets and B. Nilius, \"TRPCs, GPCRs and the Bayliss effect\", The EMBO Journal, vol. 28, no. 1, pp. 4-5, 2009. Available: 10.1038/emboj.2008.261.",
+            "\"Vessel_Mechanics\", Physiome.org, 2020. [Online]. Available: https://www.physiome.org/jsim/models/webmodel/NSR/Vessel_Mechanics/.",
+            "Chapter 7.4 - Control Paradigms: Model Following\", Engineering 360. [Online]. Available: https://www.globalspec.com/reference/13560/179909/chapter-7-4-control-paradigms-model-following.",
+            "Myogenic mechanism explained\", Everything.explained.today. [Online]. Available: https://everything.explained.today/Myogenic_mechanism/.",
+            "J. Arciero and T. Secomb, \"Spontaneous oscillations in a model for active control of microvessel diameters\", Mathematical Medicine and Biology, vol. 29, no. 2, pp. 163-180, 2011. Available: 10.1093/imammb/dqr005.",
+            "B. Hald, \"A generative modeling approach to connectivity—Electrical conduction in vascular networks\", Journal of Theoretical Biology, vol. 399, pp. 1-12, 2016. Available: 10.1016/j.jtbi.2016.03.032",
+            "https://onlinelibrary.wiley.com/doi/full/10.1080/10739680590934745"
+        ],
+        "parametric_domain": [
+            {
+                "step": "2",
+                "param": "Fixed-step size",
+                "value": ".001"
+            }
+        ],
+        "object_id": "http://localhost:3000/bco/BCO_00021290",
+        "spec_version": "1.4.0"
+    }
+]
